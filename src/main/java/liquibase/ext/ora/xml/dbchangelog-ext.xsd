@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-            xmlns="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+            targetNamespace="http://www.liquibase.org/xml/ns/dbchangelog-ext/liquibase-oracle"
+            xmlns="http://www.liquibase.org/xml/ns/dbchangelog-ext/liquibase-oracle"
             elementFormDefault="qualified">
 
     <!-- Constraints state -->
@@ -89,16 +89,16 @@
 
     <xsd:simpleType name="triggerActionType">
         <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="before"></xsd:enumeration>
-            <xsd:enumeration value="after"></xsd:enumeration>
-            <xsd:enumeration value="instead of"></xsd:enumeration>
+            <xsd:enumeration value="before"/>
+            <xsd:enumeration value="after"/>
+            <xsd:enumeration value="instead of"/>
         </xsd:restriction>
     </xsd:simpleType>
 
     <xsd:simpleType name="EnableDisable">
         <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="enable"></xsd:enumeration>
-            <xsd:enumeration value="disable"></xsd:enumeration>
+            <xsd:enumeration value="enable"/>
+            <xsd:enumeration value="disable"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -156,8 +156,8 @@
 
     <xsd:simpleType name="ReadOnlyWrite">
         <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="only"></xsd:enumeration>
-            <xsd:enumeration value="write"></xsd:enumeration>
+            <xsd:enumeration value="only"/>
+            <xsd:enumeration value="write"/>
         </xsd:restriction>
     </xsd:simpleType>
 
@@ -175,16 +175,16 @@
 
     <xsd:element name="createMaterializedView">
         <xsd:complexType>
-            <xsd:attribute name="viewName" type="xsd:string" use="required"></xsd:attribute>
-            <xsd:attribute name="schemaName" type="xsd:string"></xsd:attribute>
-            <xsd:attribute name="columnAliases" type="xsd:string"></xsd:attribute>
-            <xsd:attribute name="objectType" type="xsd:string"></xsd:attribute>
-            <xsd:attribute name="reducedPrecision" type="xsd:boolean"></xsd:attribute>
-            <xsd:attribute name="usingIndex" type="xsd:boolean"></xsd:attribute>
-            <xsd:attribute name="tableSpace" type="xsd:string"></xsd:attribute>
-            <xsd:attribute name="forUpdate" type="xsd:boolean"></xsd:attribute>
-            <xsd:attribute name="queryRewrite" type="EnableDisable"></xsd:attribute>
-            <xsd:attribute name="subquery" type="xsd:string" use="required"></xsd:attribute>
+            <xsd:attribute name="viewName" type="xsd:string" use="required"/>
+            <xsd:attribute name="schemaName" type="xsd:string"/>
+            <xsd:attribute name="columnAliases" type="xsd:string"/>
+            <xsd:attribute name="objectType" type="xsd:string"/>
+            <xsd:attribute name="reducedPrecision" type="xsd:boolean"/>
+            <xsd:attribute name="usingIndex" type="xsd:boolean"/>
+            <xsd:attribute name="tableSpace" type="xsd:string"/>
+            <xsd:attribute name="forUpdate" type="xsd:boolean"/>
+            <xsd:attribute name="queryRewrite" type="EnableDisable"/>
+            <xsd:attribute name="subquery" type="xsd:string" use="required"/>
         </xsd:complexType>
     </xsd:element>
 
@@ -192,12 +192,13 @@
 
     <xsd:element name="dropMaterializedView">
         <xsd:complexType>
-            <xsd:attribute name="viewName" type="xsd:string" use="required"></xsd:attribute>
-            <xsd:attribute name="schemaName" type="xsd:string"></xsd:attribute>
+            <xsd:attribute name="viewName" type="xsd:string" use="required"/>
+            <xsd:attribute name="schemaName" type="xsd:string"/>
         </xsd:complexType>
     </xsd:element>
     
     <!-- Refresh Materialized View -->
+    <!--
     <xsd:element name="refreshMaterializedView">
         <xsd:complexType>
             <xsd:attribute name="viewName" type="xsd:string" use="required" />
@@ -206,6 +207,7 @@
             <xsd:attribute name="atomicRefresh" type="xsd:boolean" default="false" />
         </xsd:complexType>
     </xsd:element>
+    -->
 
     <!--  Truncate -->
 
